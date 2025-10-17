@@ -1,5 +1,7 @@
 package org.example.entregable3.service;
 
+import org.example.entregable3.entities.Estudiante;
+import org.example.entregable3.service.DTO.Response.EstudianteResponseDTO;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.AllArgsConstructor;
 import org.example.entregable3.entities.Carrera;
@@ -26,12 +28,19 @@ public class CarreraService {
         return carreraRepository.getReporte();
     }
     @Transactional(readOnly = true)
-    public CarreraResponseDTO getCarreraById(Long id){
-        return carreraRepository.getCarreraById(id);
+    public CarreraResponseDTO getCarreraById(int id){
+        return carreraRepository.findById(id)
+                .map(c -> new CarreraResponseDTO(
+                        c.getCarrera(),
+                        c.getDuracion()
+                ))
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado con ID: " + id));
     }
     @Transactional(readOnly = true)
     public List<CarreraResponseDTO> getCarreraxCantidadInscriptos(){
-        return carreraRepository.getCarrerasXCantidadInscriptos();
+        List<CarreraResponseDTO> cantidadInscriptos = carreraRepository.getCarrerasXCantidadInscriptos();
+        return cantidadInscriptos.stream()
+                .map(ci -> new CarreraResponseDTO( ci.getCarrera(), ci.getDuracion()))
+                .toList();
     }
-
 }

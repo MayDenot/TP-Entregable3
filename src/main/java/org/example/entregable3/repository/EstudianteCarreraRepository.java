@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EstudianteCarreraRepository extends JpaRepository<Estudiante_Carrera, Estudiante_Carrera_PK> {
-  // insertEstudianteACarrera(Estudiante_Carrera ec)
 }

@@ -12,9 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CarreraResponseDTO {
-    @NotBlank(message = "Una carrera no puede ser nula")
-    private int idCarrera;
     private String carrera;
     private int duracion;
-    private List<Estudiante_CarreraResponseDTO> inscriptos;
+    //private List<Estudiante_CarreraResponseDTO> inscriptos;
 }

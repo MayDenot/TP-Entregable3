@@ -12,13 +12,13 @@ import java.util.List;
 
 @Repository
 public interface CarreraRepository extends JpaRepository<Carrera, Integer> {
-    @Query("SELECT new org.example.entregable3.service.DTO.Request.CarreraRequestDTO(c.carrera, COUNT(ec.estudiante)) " +
+    @Query("SELECT new org.example.entregable3.service.DTO.Request.CarreraRequestDTO(c.idCarrera,c.carrera, COUNT(ec.estudiante)) " +
             "FROM Estudiante_Carrera ec " +
             "JOIN ec.carrera c " +
             "GROUP BY c.carrera " +
             "ORDER BY COUNT(ec.estudiante) DESC")
     List<CarreraResponseDTO> getCarrerasXCantidadInscriptos();
-    CarreraResponseDTO getCarreraById(Long id);
+    Carrera getCarreraById(Long id);
     @Query("SELECT new org.example.entregable3.service.DTO.Response.ReporteResponseDTO(" +
             "c.carrera, " +
             "COUNT(ec), " +
