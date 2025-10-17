@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c \"dir C:\\Users\\Daniel\\Desktop\\Facultad\\Arquitectura\\TP-Entregable3 /b\")",
+      "Bash(./mvnw.cmd clean:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

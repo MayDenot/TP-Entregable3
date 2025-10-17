@@ -38,9 +38,6 @@ public class CarreraService {
     }
     @Transactional(readOnly = true)
     public List<CarreraResponseDTO> getCarreraxCantidadInscriptos(){
-        List<CarreraResponseDTO> cantidadInscriptos = carreraRepository.getCarrerasXCantidadInscriptos();
-        return cantidadInscriptos.stream()
-                .map(ci -> new CarreraResponseDTO( ci.getCarrera(), ci.getDuracion()))
-                .toList();
+        return carreraRepository.getCarrerasXCantidadInscriptos();
     }
 }

@@ -56,8 +56,8 @@ public class EstudianteService {
         }
     }
     @Transactional(readOnly = true)
-    public List<EstudianteResponseDTO> getEstudiantesByCarreraYCiudad(int id_carrera, String ciudad){
-        List<Estudiante> estudiantes = estudianteRepository.getEstudiantesByCarreraYCiudad(id_carrera, ciudad);
+    public List<EstudianteResponseDTO> getEstudiantesByCarreraYCiudad(int idCarrera, String ciudad){
+        List<Estudiante> estudiantes = estudianteRepository.getEstudiantesByCarreraYCiudad(idCarrera, ciudad);
         return estudiantes.stream()
                 .map(e -> new EstudianteResponseDTO(
                         e.getDNI(),

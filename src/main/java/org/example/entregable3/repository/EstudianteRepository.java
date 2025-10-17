@@ -24,11 +24,13 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Integer>
 """)
     //en caso de no filtrar por nada ordena por apellido por default
     List<Estudiante> search(Integer dni, String nombre, String apellido, Integer edad, String genero, String ciudad, Integer LU);
-    Estudiante getEstudianteByLibreta(int libreta);
+
     @Query("SELECT e FROM Estudiante e WHERE e.genero = :genero")
     List<Estudiante> getEstudiantesByGenero(String genero);
-    @Query("SELECT e FROM Estudiante e WHERE e.LU =:libreta")
+
+    @Query("SELECT e FROM Estudiante e WHERE e.LU = :lu")
     Optional<Estudiante> getEstudianteByLU(int lu);
-    @Query("SELECT ec.estudiante FROM Estudiante_Carrera  ec where ec.carrera.idCarrera=:idCarrera AND ec.estudiante.ciudad=:ciudad")
-    List<Estudiante> getEstudiantesByCarreraYCiudad(int id_carrera, String ciudad);
+
+    @Query("SELECT ec.estudiante FROM Estudiante_Carrera ec WHERE ec.carrera.idCarrera = :idCarrera AND ec.estudiante.ciudad = :ciudad")
+    List<Estudiante> getEstudiantesByCarreraYCiudad(int idCarrera, String ciudad);
 }

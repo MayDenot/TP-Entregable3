@@ -1,4 +1,4 @@
-yml spring:
+spring:
   application:
     name: Entregable3
 
