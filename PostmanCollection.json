@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6af82fb8-ce7b-41ff-bbe0-91ffe408c5bf",
+		"_postman_id": "0ff5ad1a-33b2-4828-9b5e-4640dc0adb39",
 		"name": "Entregable3",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39265160"
+		"_exporter_id": "30960140"
 	},
 	"item": [
 		{
@@ -276,6 +276,35 @@
 							"path": [
 								"api",
 								"estudiantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/estudianteCarrera",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"anioInscripcion\": 2024,\r\n      \"antiguedad\": 0,\r\n      \"anioGraduacion\": 0,\r\n      \"estudiante\": {\r\n          \"DNI\": 46116932\r\n      },\r\n      \"carrera\": {\r\n          \"id\": 1\r\n      }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/estudianteCarrera",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudianteCarrera"
 							]
 						}
 					},
