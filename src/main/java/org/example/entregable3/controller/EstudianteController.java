@@ -62,7 +62,7 @@ public class EstudianteController {
     }
 
     // GET: Obtener estudiante por número de libreta universitaria
-    @GetMapping("/{LU}")
+    @GetMapping("/libreta/{LU}")
     public ResponseEntity<?> getEstudianteByLibreta(@PathVariable int LU) {
         try {
             EstudianteResponseDTO estudiante = estudianteService.getEstudianteByLibreta(LU);
@@ -73,7 +73,7 @@ public class EstudianteController {
     }
 
     // GET: Obtener estudiantes filtrados por género
-    @GetMapping("/{genero}")
+    @GetMapping("/genero/{genero}")
     public ResponseEntity<?> getEstudiantesByGenero(@PathVariable String genero) {
         try {
             List<EstudianteResponseDTO> estudiantes = estudianteService.getEstudianteByGenero(genero);

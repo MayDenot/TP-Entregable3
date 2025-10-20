@@ -14,11 +14,11 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Integer>
     SELECT e
     FROM Estudiante e
     WHERE (:dni IS NULL OR e.DNI = :dni)
-      AND (:nombre IS NULL OR e.nombre LIKE %:nombre%)
-      AND (:apellido IS NULL OR e.apellido LIKE %:apellido%)
+      AND (:nombre IS NULL OR e.nombre LIKE CONCAT('%', :nombre, '%'))
+      AND (:apellido IS NULL OR e.apellido LIKE CONCAT('%', :apellido, '%'))
       AND (:edad IS NULL OR e.edad = :edad)
       AND (:genero IS NULL OR e.genero = :genero)
-      AND (:ciudad IS NULL OR e.ciudad LIKE %:ciudad%)
+      AND (:ciudad IS NULL OR e.ciudad LIKE CONCAT('%', :ciudad, '%'))
       AND (:LU IS NULL OR e.LU = :LU)
     ORDER BY e.apellido ASC
 """)

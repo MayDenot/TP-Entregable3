@@ -1,6 +1,7 @@
 package org.example.entregable3.service.DTO.Request;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CarreraRequestDTO {
-    @NotBlank(message = "Una carrera no puede ser nula")
-    private int id;
+    @NotNull(message = "El ID de la carrera no puede ser nulo")
+    @Positive(message = "El ID debe ser un número positivo")
+    private Integer id;
     private String carrera;
-    private Long duracion;
+    private Integer duracion;
     //private List<Estudiante_CarreraRequestDTO> estudiantes;
 
 
