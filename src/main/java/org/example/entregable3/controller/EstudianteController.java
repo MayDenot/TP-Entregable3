@@ -1,7 +1,6 @@
 package org.example.entregable3.controller;
 
 import jakarta.validation.Valid;
-import org.example.entregable3.entities.Estudiante;
 import org.example.entregable3.service.DTO.Request.EstudianteRequestDTO;
 import org.example.entregable3.service.DTO.Response.EstudianteResponseDTO;
 import org.example.entregable3.service.EstudianteService;
@@ -24,17 +23,7 @@ public class EstudianteController {
     @PostMapping
     public ResponseEntity<?> insertarEstudiante(@RequestBody @Valid EstudianteRequestDTO estudianteDTO) {
         try {
-            Estudiante estudiante = new Estudiante(
-                    estudianteDTO.getDNI(),
-                    estudianteDTO.getNombre(),
-                    estudianteDTO.getApellido(),
-                    estudianteDTO.getEdad(),
-                    estudianteDTO.getGenero(),
-                    estudianteDTO.getCiudad(),
-                    estudianteDTO.getLU(),
-                    null
-            );
-            estudianteService.insertarEstudiante(estudiante);
+            estudianteService.insertarEstudiante(estudianteDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body("Estudiante creado exitosamente");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al crear estudiante: " + e.getMessage());

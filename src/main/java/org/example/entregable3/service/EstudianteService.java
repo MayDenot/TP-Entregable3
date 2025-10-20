@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.example.entregable3.entities.Carrera;
 import org.example.entregable3.entities.Estudiante;
 import org.example.entregable3.repository.EstudianteRepository;
+import org.example.entregable3.service.DTO.Request.EstudianteRequestDTO;
 import org.example.entregable3.service.DTO.Response.CarreraResponseDTO;
 import org.example.entregable3.service.DTO.Response.EstudianteResponseDTO;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,18 @@ public class EstudianteService {
     private final  EstudianteRepository estudianteRepository;
 
     @Transactional
-    public void insertarEstudiante(Estudiante estudiante) throws Exception{
+    public void insertarEstudiante(EstudianteRequestDTO estudianteDTO) throws Exception{
         try{
+            Estudiante estudiante = new Estudiante(
+                    estudianteDTO.getDNI(),
+                    estudianteDTO.getNombre(),
+                    estudianteDTO.getApellido(),
+                    estudianteDTO.getEdad(),
+                    estudianteDTO.getGenero(),
+                    estudianteDTO.getCiudad(),
+                    estudianteDTO.getLU(),
+                    null
+            );
             estudianteRepository.save(estudiante);
         }catch (Exception e){
             throw new Exception(e.getMessage());
