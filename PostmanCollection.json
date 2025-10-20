@@ -193,7 +193,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/estudiantes?DNI=&nombre=&apellido=&edad=&genero=&ciudad=&LU=&",
+					"name": "http://localhost:8080/api/estudiantes?dni=&nombre=Daniel&apellido=&edad=&genero=&ciudad=&LU=",
 					"request": {
 						"auth": {
 							"type": "noauth"

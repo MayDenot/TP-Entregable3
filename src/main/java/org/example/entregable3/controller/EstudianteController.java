@@ -40,7 +40,15 @@ public class EstudianteController {
             @RequestParam(required = false) String genero,
             @RequestParam(required = false) String ciudad,
             @RequestParam(required = false) Integer LU) {
-        List<EstudianteResponseDTO> estudiantes = estudianteService.search(dni, nombre, apellido, edad, genero, ciudad, LU);
+
+        // Convertir strings vacíos a null para que el query ignore esos filtros
+        String nombreFiltro = (nombre != null && nombre.trim().isEmpty()) ? null : nombre;
+        String apellidoFiltro = (apellido != null && apellido.trim().isEmpty()) ? null : apellido;
+        String generoFiltro = (genero != null && genero.trim().isEmpty()) ? null : genero;
+        String ciudadFiltro = (ciudad != null && ciudad.trim().isEmpty()) ? null : ciudad;
+
+        List<EstudianteResponseDTO> estudiantes = estudianteService.search(
+                dni, nombreFiltro, apellidoFiltro, edad, generoFiltro, ciudadFiltro, LU);
         return ResponseEntity.ok(estudiantes);
     }
 
