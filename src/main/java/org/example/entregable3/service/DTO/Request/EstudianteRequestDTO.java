@@ -1,35 +1,46 @@
 package org.example.entregable3.service.DTO.Request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
-@NoArgsConstructor
+@Getter
 public class EstudianteRequestDTO {
-    @JsonProperty("DNI")
+
+    @NotNull(message = "El DNI es obligatorio")
+    @Positive(message = "El DNI debe ser un número positivo")
     private Integer DNI;
 
-    @JsonProperty("nombre")
+    @NotNull(message = "El nombre es obligatorio")
+    @NotBlank(message = "El nombre no puede estar vacío")
     private String nombre;
 
-    @JsonProperty("apellido")
+    @NotNull(message = "El apellido es obligatorio")
+    @NotBlank(message = "El apellido no puede estar vacío")
     private String apellido;
 
-    @JsonProperty("edad")
+    @NotNull(message = "La edad es obligatoria")
+    @Positive(message = "La edad debe ser un número positivo")
+    @Min(value = 1, message = "La edad debe ser al menos 1")
+    @Max(value = 120, message = "La edad debe ser menor a 120")
     private Integer edad;
 
-    @JsonProperty("genero")
+    @NotNull(message = "El género es obligatorio")
+    @NotBlank(message = "El género no puede estar vacío")
+    @Pattern(regexp = "^[MF]$", message = "El género debe ser 'M' o 'F'")
     private String genero;
 
-    @JsonProperty("ciudad")
+    @NotNull(message = "La ciudad es obligatoria")
+    @NotBlank(message = "La ciudad no puede estar vacía")
     private String ciudad;
 
-    @JsonProperty("LU")
+    @NotNull(message = "El LU (Libreta Universitaria) es obligatorio")
+    @Positive(message = "El LU debe ser un número positivo")
     private Integer LU;
+
     //private List<Estudiante_CarreraRequestDTO> inscripciones;
 }

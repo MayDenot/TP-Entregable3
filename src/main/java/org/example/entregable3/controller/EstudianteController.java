@@ -1,5 +1,6 @@
 package org.example.entregable3.controller;
 
+import jakarta.validation.Valid;
 import org.example.entregable3.entities.Estudiante;
 import org.example.entregable3.service.DTO.Request.EstudianteRequestDTO;
 import org.example.entregable3.service.DTO.Response.EstudianteResponseDTO;
@@ -21,15 +22,8 @@ public class EstudianteController {
 
     // POST: Insertar nuevo estudiante
     @PostMapping
-    public ResponseEntity<?> insertarEstudiante(@RequestBody EstudianteRequestDTO estudianteDTO) {
+    public ResponseEntity<?> insertarEstudiante(@RequestBody @Valid EstudianteRequestDTO estudianteDTO) {
         try {
-//            // Validar que los campos requeridos no sean null
-//            if (estudianteDTO.getDNI() == null || estudianteDTO.getLU() == null ||
-//                estudianteDTO.getEdad() == null) {
-//                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-//                    .body("Error: DNI, LU y edad son campos obligatorios");
-//            }
-
             Estudiante estudiante = new Estudiante(
                     estudianteDTO.getDNI(),
                     estudianteDTO.getNombre(),
