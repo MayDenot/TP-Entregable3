@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "6af82fb8-ce7b-41ff-bbe0-91ffe408c5bf",
+		"name": "Entregable3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39265160"
+	},
+	"item": [
+		{
+			"name": "Carrera",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/carreras/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carreras/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carreras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carreras/reportes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carreras/reportes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carreras",
+								"reportes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carreras/inscriptos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carreras/inscriptos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carreras",
+								"inscriptos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/carreras/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCarrera\": 3,\r\n    \"carrera\": \"Ingenieria en Sistemas\",\r\n    \"duracion\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carreras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carreras"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estudiante",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/estudiantes/libreta/12345",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estudiantes/libreta/12345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudiantes",
+								"libreta",
+								"12345"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/estudiantes/genero/M",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estudiantes/genero/M",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudiantes",
+								"genero",
+								"M"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/estudiantes/carrera/1/ciudad/Tandil",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estudiantes/carrera/1/ciudad/Tandil",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudiantes",
+								"carrera",
+								"1",
+								"ciudad",
+								"Tandil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/estudiantes?DNI=&nombre=&apellido=&edad=&genero=&ciudad=&LU=&",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estudiantes?DNI=&nombre=&apellido=&edad=&genero=&ciudad=&LU=&",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudiantes"
+							],
+							"query": [
+								{
+									"key": "DNI",
+									"value": ""
+								},
+								{
+									"key": "nombre",
+									"value": ""
+								},
+								{
+									"key": "apellido",
+									"value": ""
+								},
+								{
+									"key": "edad",
+									"value": ""
+								},
+								{
+									"key": "genero",
+									"value": ""
+								},
+								{
+									"key": "ciudad",
+									"value": ""
+								},
+								{
+									"key": "LU",
+									"value": ""
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/estudiantes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DNI\": 44048412,\r\n    \"nombre\": \"Pepe\",\r\n    \"apellido\": \"Banana\",\r\n    \"edad\": 119,\r\n    \"genero\": \"M\",\r\n    \"ciudad\": \"Kiev\",\r\n    \"LU\": 13246889\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/estudiantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudiantes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inscripcion",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/estudianteCarrera/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estudianteCarrera/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estudianteCarrera",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
