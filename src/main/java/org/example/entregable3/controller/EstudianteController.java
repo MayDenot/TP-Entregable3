@@ -23,6 +23,13 @@ public class EstudianteController {
     @PostMapping
     public ResponseEntity<?> insertarEstudiante(@RequestBody EstudianteRequestDTO estudianteDTO) {
         try {
+            // Validar que los campos requeridos no sean null
+            if (estudianteDTO.getDNI() == null || estudianteDTO.getLU() == null ||
+                estudianteDTO.getEdad() == null) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Error: DNI, LU y edad son campos obligatorios");
+            }
+
             Estudiante estudiante = new Estudiante(
                     estudianteDTO.getDNI(),
                     estudianteDTO.getNombre(),
@@ -55,7 +62,7 @@ public class EstudianteController {
     }
 
     // GET: Obtener estudiante por número de libreta universitaria
-    @GetMapping("/libreta/{LU}")
+    @GetMapping("/{LU}")
     public ResponseEntity<?> getEstudianteByLibreta(@PathVariable int LU) {
         try {
             EstudianteResponseDTO estudiante = estudianteService.getEstudianteByLibreta(LU);
@@ -66,7 +73,7 @@ public class EstudianteController {
     }
 
     // GET: Obtener estudiantes filtrados por género
-    @GetMapping("/genero/{genero}")
+    @GetMapping("/{genero}")
     public ResponseEntity<?> getEstudiantesByGenero(@PathVariable String genero) {
         try {
             List<EstudianteResponseDTO> estudiantes = estudianteService.getEstudianteByGenero(genero);

@@ -34,7 +34,7 @@ public class CarreraService {
                         c.getCarrera(),
                         c.getDuracion()
                 ))
-                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado con ID: " + id));
+                .orElseThrow(() -> new RuntimeException("Carrera no encontrada con ID:: " + id));
     }
     @Transactional(readOnly = true)
     public List<CarreraResponseDTO> getCarreraxCantidadInscriptos(){

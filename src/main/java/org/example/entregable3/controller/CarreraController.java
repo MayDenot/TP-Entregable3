@@ -37,7 +37,7 @@ public class CarreraController {
     }
 
     // GET - Obtener carrera por ID
-    @GetMapping("/carrera/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<CarreraResponseDTO> getCarreraById(
             @PathVariable @Positive(message = "El ID debe ser positivo") int id) {
         return ResponseEntity.ok(carreraService.getCarreraById(id));

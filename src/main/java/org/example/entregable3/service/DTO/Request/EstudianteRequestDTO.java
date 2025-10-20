@@ -10,12 +10,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EstudianteRequestDTO {
-    private int DNI;
+    private Integer DNI;
     private String nombre;
     private String apellido;
-    private int edad;
+    private Integer edad;
     private String genero;
     private String ciudad;
-    private int LU;
+    private Integer LU;
     //private List<Estudiante_CarreraRequestDTO> inscripciones;
 }
