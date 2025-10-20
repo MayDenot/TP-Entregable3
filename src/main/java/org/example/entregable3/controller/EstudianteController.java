@@ -23,12 +23,12 @@ public class EstudianteController {
     @PostMapping
     public ResponseEntity<?> insertarEstudiante(@RequestBody EstudianteRequestDTO estudianteDTO) {
         try {
-            // Validar que los campos requeridos no sean null
-            if (estudianteDTO.getDNI() == null || estudianteDTO.getLU() == null ||
-                estudianteDTO.getEdad() == null) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Error: DNI, LU y edad son campos obligatorios");
-            }
+//            // Validar que los campos requeridos no sean null
+//            if (estudianteDTO.getDNI() == null || estudianteDTO.getLU() == null ||
+//                estudianteDTO.getEdad() == null) {
+//                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+//                    .body("Error: DNI, LU y edad son campos obligatorios");
+//            }
 
             Estudiante estudiante = new Estudiante(
                     estudianteDTO.getDNI(),
